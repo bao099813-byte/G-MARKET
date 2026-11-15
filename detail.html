@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm | G-Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+            align-items: center;
+        }
+
+        .detail-img-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        /* ĐÃ CHÈN HÌNH ẢNH MINH HỌA TRỰC QUAN VÀO CODE */
+        .detail-img-box img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .detail-info h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .detail-price {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .detail-desc {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .specs-list {
+            margin-bottom: 25px;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .specs-list li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .specs-list li i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .detail-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> G-MARKET</a>
+            <nav class="nav-menu">
+                <a href="index.html">Trang chủ</a>
+                <a href="products.html">Sản phẩm</a>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- DETAIL CONTENT -->
+    <div class="container">
+        <div class="detail-container" id="productDetailContainer">
+            <!-- Dữ liệu chi tiết sẽ được điền bằng JavaScript dựa trên ID truyền vào -->
+        </div>
+    </div>
+
+    <script>
+        const allProductsData = [
+            { id: 1, name: "Thẻ Steam Wallet 100$ USD", price: 2450000, image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&q=80", category: "Thẻ Game", desc: "Mã thẻ Steam Wallet chính hãng khu vực US, dùng để nạp tiền trực tiếp vào tài khoản Steam mua game bản quyền, DLC và vật phẩm trên Steam Community Market." },
+            { id: 2, name: "Chuột Gaming Razer Viper V2 Pro", price: 3290000, image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80", category: "Gaming Gear", desc: "Chuột chơi game siêu nhẹ thiết kế công thái học dành cho các tựa game Esport chuyên nghiệp, cảm biến quang học Focus Pro 30K cực kỳ chính xác." },
+            { id: 3, name: "Tai Nghe Logitech G Pro X Wireless", price: 4150000, image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&q=80", category: "Gaming Gear", desc: "Tai nghe không dây cao cấp tích hợp công nghệ âm thanh vòm thế hệ mới, màng loa PRO-G 50mm mang lại âm thanh chân thực trong từng bước chân." },
+            { id: 4, name: "Skin Valorant Elderflame Vandal", price: 850000, image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80", category: "Vật Phẩm", desc: "Gói trang bị rồng lửa huyền thoại trong tựa game Valorant, hiệu ứng âm thanh và hoạt ảnh kết liễu cực kỳ đẳng cấp." },
+            { id: 5, name: "Bàn Phím Cơ Asus ROG Strix Scope", price: 2890000, image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80", category: "Gaming Gear", desc: "Bàn phím cơ gaming RGB switch Cherry MX cơ học chính hãng, khung nhôm bền bỉ cùng phím Ctrl rộng đặc biệt cho game thủ FPS." },
+            { id: 6, name: "Thẻ Garena 500.000 VNĐ", price: 475000, image: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?w=500&q=80", category: "Thẻ Game", desc: "Thẻ nạp game chính thức của Garena, quy đổi nhanh chóng thành Sò hoặc Kim Cương trong Liên Quân Mobile, Free Fire và FIFA Online 4." }
+        ];
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        }
+
+        function loadProductDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id')) || 1; // Mặc định sản phẩm 1 nếu không truyền id
+
+            const product = allProductsData.find(p => p.id === productId) || allProductsData[0];
+
+            const container = document.getElementById('productDetailContainer');
+            container.innerHTML = `
+        <div class="detail-img-box">
+          <img src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="detail-info">
+          <span class="badge">${product.category}</span>
+          <h1>${product.name}</h1>
+          <div class="detail-price">${formatCurrency(product.price)}</div>
+          <p class="detail-desc">${product.desc}</p>
+          
+          <ul class="specs-list">
+            <li><i class="fa-solid fa-check"></i> Cam kết chính hãng 100%</li>
+            <li><i class="fa-solid fa-bolt"></i> Giao mã tự động trong 30 giây</li>
+            <li><i class="fa-solid fa-shield-halved"></i> Bảo hành đổi trả minh bạch</li>
+          </ul>
+
+          <button class="btn btn-primary" style="padding: 14px 30px; font-size: 1.1rem;" onclick="addToCart(${product.id})">
+            <i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ Hàng
+          </button>
+        </div>
+      `;
+        }
+
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('gmarket_cart')) || [];
+            cart.push(productId);
+            localStorage.setItem('gmarket_cart', JSON.stringify(cart));
+            updateCartCount();
+            alert("Đã thêm sản phẩm vào giỏ hàng thành công!");
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('gmarket_cart')) || [];
+            const cartCountEl = document.getElementById('cartCount');
+            if (cartCountEl) cartCountEl.textContent = cart.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProductDetail();
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

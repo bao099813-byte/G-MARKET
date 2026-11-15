@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ | G-Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> G-MARKET</a>
+            <nav class="nav-menu">
+                <a href="index.html">Trang chủ</a>
+                <a href="products.html">Sản phẩm</a>
+                <a href="news.html">Tin tức</a>
+                <a href="contact.html" class="active">Liên hệ</a>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG LIÊN HỆ -->
+    <div class="container" style="padding: 40px 0;">
+        <h1
+            style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 30px; text-align: center;">
+            Liên Hệ Với G-Market</h1>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;"
+            class="contact-grid">
+
+            <!-- Thông tin liên hệ -->
+            <div
+                style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 30px;">
+                <h3
+                    style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 20px; font-size: 1.4rem;">
+                    Thông Tin Hỗ Trợ</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px; line-height: 1.8;">Bạn cần tư vấn về mã thẻ
+                    game, vật phẩm hay gặp sự cố giao dịch? Đội ngũ G-Market luôn sẵn sàng hỗ trợ bạn 24/7.</p>
+
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div
+                        style="background: rgba(0, 242, 254, 0.1); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem;">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <span style="display: block; color: var(--text-muted); font-size: 0.85rem;">Điện thoại /
+                            Hotline</span>
+                        <strong style="font-size: 1.1rem; color: #fff;">0933511118</strong>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div
+                        style="background: rgba(0, 242, 254, 0.1); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem;">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <span style="display: block; color: var(--text-muted); font-size: 0.85rem;">Hỗ trợ qua
+                            Email</span>
+                        <strong style="font-size: 1.1rem; color: #fff;">bo134@gmail.com</strong>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div
+                        style="background: rgba(0, 242, 254, 0.1); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem;">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <span style="display: block; color: var(--text-muted); font-size: 0.85rem;">Địa chỉ văn
+                            phòng</span>
+                        <strong style="font-size: 1.1rem; color: #fff;">Hồ Chí Minh, Việt Nam</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form gửi tin nhắn -->
+            <div
+                style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 30px;">
+                <h3
+                    style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 20px; font-size: 1.4rem;">
+                    Gửi Tin Nhắn Cho Chúng Tôi</h3>
+
+                <form id="contactForm">
+                    <div style="margin-bottom: 15px;">
+                        <label
+                            style="display: block; margin-bottom: 5px; color: var(--text-muted); font-size: 0.9rem;">Họ
+                            và tên của bạn</label>
+                        <input type="text" id="cName" required placeholder="Nhập họ tên..."
+                            style="width: 100%; padding: 12px; background: var(--bg-color); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;">
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label
+                            style="display: block; margin-bottom: 5px; color: var(--text-muted); font-size: 0.9rem;">Email
+                            liên hệ</label>
+                        <input type="email" id="cEmail" required placeholder="nhapemail@gmail.com"
+                            style="width: 100%; padding: 12px; background: var(--bg-color); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label
+                            style="display: block; margin-bottom: 5px; color: var(--text-muted); font-size: 0.9rem;">Nội
+                            dung tin nhắn</label>
+                        <textarea id="cMessage" rows="4" required placeholder="Nhập nội dung bạn cần hỗ trợ..."
+                            style="width: 100%; padding: 12px; background: var(--bg-color); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none; resize: none;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; padding: 12px; font-size: 1rem;">Gửi Yêu Cầu Hỗ Trợ</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 G-Market. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Xử lý submit form liên hệ
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Cảm ơn bạn đã gửi tin nhắn! Đội ngũ G-Market sẽ phản hồi qua email bo134@gmail.com hoặc số điện thoại của bạn trong thời gian sớm nhất.");
+            this.reset();
+        });
+
+        // Cập nhật số lượng giỏ hàng trên Header
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartIds = JSON.parse(localStorage.getItem('gmarket_cart')) || [];
+            const badge = document.getElementById('cartCount');
+            if (badge) badge.textContent = cartIds.length;
+        });
+    </script>
+</body>
+
+</html>
