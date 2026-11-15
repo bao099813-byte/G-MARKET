@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Market | Chợ Vật Phẩm & Game Gear Hàng Đầu</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-gamepad"></i> G-MARKET
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm game, thẻ game, gear...">
+                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="active">Trang chủ</a>
+                <a href="products.html">Sản phẩm</a>
+                <a href="#">Tin tức</a>
+                <a href="#">Liên hệ</a>
+            </nav>
+
+            <div class="user-actions">
+                <a href="cart.html" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="login.html" class="btn btn-outline" id="authBtn">Đăng nhập</a>
+                <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">🔥 Siêu Đại Tiệc Gaming</span>
+                <h1>Nâng Cấp Kho Đồ <span>G-Market</span> Ngay Hôm Nay</h1>
+                <p>Giao dịch vật phẩm, thẻ game và thiết bị gaming uy tín, nhanh chóng với mức giá tốt nhất thị trường.
+                </p>
+                <div class="hero-btns">
+                    <a href="#featured-products" class="btn btn-primary">Khám phá ngay</a>
+                    <a href="register.html" class="btn btn-outline">Tạo tài khoản</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DANH MỤC NỔI BẬT -->
+    <section class="categories section">
+        <div class="container">
+            <h2 class="section-title">Danh Mục Phổ Biến</h2>
+            <div class="category-grid">
+                <div class="cat-card">
+                    <i class="fa-solid fa-coins"></i>
+                    <h3>Thẻ Game & Coins</h3>
+                </div>
+                <div class="cat-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Vật Phẩm In-Game</h3>
+                </div>
+                <div class="cat-card">
+                    <i class="fa-solid fa-headset"></i>
+                    <h3>Gaming Gear</h3>
+                </div>
+                <div class="cat-card">
+                    <i class="fa-solid fa-user-ninja"></i>
+                    <h3>Tài Khoản VIP</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DANH SÁCH SẢN PHẨM NỔI BẬT (CSS GRID) -->
+    <section class="products section" id="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+                <a href="products.html" class="view-more">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Container render sản phẩm bằng JS -->
+            <div class="product-grid" id="productGrid">
+                <!-- Đang tải dữ liệu... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-gamepad"></i> G-MARKET
+                </a>
+                <p>Nền tảng thương mại điện tử chuyên biệt dành cho cộng đồng game thủ Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Cửa hàng</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Bảo mật thông tin</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hỗ Trợ Khách Hàng</h4>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Nạp tiền ví</a></li>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kết Nối</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 G-Market. All rights reserved. Designed for Gamers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
